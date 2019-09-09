@@ -2,7 +2,7 @@ import pandas as pd
 
 
 #imports data from CSV file
-url = "https://raw.githubusercontent.com/numenta/NAB/master/data/realTweets/Twitter_volume_AMZN.csv"
+url = "https://raw.githubusercontent.com/RuchirB/jacobsonEntries/master/Formatted.csv"
 df = pd.read_csv(url, header=0, index_col=0)
 
 
@@ -16,8 +16,8 @@ plt.show()
 #Creates a training dataset from the very first date until April 5th, 2015
 from gluonts.dataset.common import ListDataset
 training_data = ListDataset(
-    [{"start": df.index[0], "target": df.value[:"2015-04-05 00:00:00"]}],
-    freq = "5min"
+    [{"start": df.index[0], "target": df.index[1000]}],
+    freq = "60min"
 )
 
 #The estimator creates a prediction object. Since each prediction is of a 5min frequency interval, this next chunk predicts the next hour
