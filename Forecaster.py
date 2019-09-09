@@ -2,7 +2,7 @@ import pandas as pd
 
 
 #imports data from CSV file
-url = "https://raw.githubusercontent.com/RuchirB/jacobsonEntries/master/Formatted.csv"
+url = "https://raw.githubusercontent.com/RuchirB/jacobsonEntries/master/formatteddata.csv"
 df = pd.read_csv(url, header=0, index_col=0)
 
 
